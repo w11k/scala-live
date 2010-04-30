@@ -27,4 +27,13 @@ class PersonSpec extends SpecificationWithJUnit {
       person.toString mustEqual John + " " + Doe
     }
   }
+
+  """The string "John" """ should {
+    """be implicitly converted into a Person with firstName "John" and lastName "" """ in {
+      val John = "John"
+      val person: Person = John
+      person.firstName mustEqual John
+      person.lastName mustEqual ""
+    }
+  }
 }

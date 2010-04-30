@@ -8,6 +8,7 @@
 
 object Person {
   def apply(firstName: String = "", lastName: String = "") = new Person(firstName, lastName)
+  implicit def stringToPerson(name: String) = Person(name)
 }
 
 class Person(var firstName: String = "", var lastName: String = "") {
