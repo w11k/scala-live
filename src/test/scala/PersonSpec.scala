@@ -18,4 +18,13 @@ class PersonSpec extends SpecificationWithJUnit {
       new Person(lastName = null) must throwA[IllegalArgumentException]
     }
   }
+
+  "Calling Person.toString" should {
+    """return "John Doe" for firstName "John" and lastName "Doe" """ in {
+      val John = "John"
+      val Doe = "Doe"
+      val person = new Person(John, Doe)
+      person.toString mustEqual John + " " + Doe
+    }
+  }
 }
