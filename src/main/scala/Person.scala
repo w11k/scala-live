@@ -8,7 +8,13 @@
 
 object Person {
   def apply(firstName: String = "", lastName: String = "") = new Person(firstName, lastName)
-  implicit def stringToPerson(name: String) = Person(name)
+  implicit def stringToPerson(name: String) = {
+    require(name != null)
+    name split " " toSeq match {
+      case Seq(firstName, lastName) => Person(firstName, lastName)
+      case _ => Person(name)
+    }
+  }
 }
 
 class Person(var firstName: String = "", var lastName: String = "") {
