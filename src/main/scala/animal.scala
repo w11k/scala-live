@@ -12,3 +12,13 @@ abstract class Animal {
 }
 
 class DefaultAnimal(override val name: String) extends Animal
+
+class Bird(name: String) extends DefaultAnimal(name) {
+  def fly = "I can fly!"
+}
+
+class Fish(name: String) extends DefaultAnimal(name) {
+  def swim = "I can swim!"
+}
+
+class Duck(name: String) extends Bird(name)
