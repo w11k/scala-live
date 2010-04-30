@@ -11,6 +11,8 @@ object Person {
 }
 
 class Person(var firstName: String = "", var lastName: String = "") {
+  require(firstName != null, "firstName must not be null!")
+  require(lastName != null, "lastName must not be null!")
   def name = "%s %s".format(firstName, lastName).trim
   override def toString = name
 }
