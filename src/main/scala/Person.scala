@@ -6,4 +6,6 @@
  * http://www.eclipse.org/legal/epl-v10.html
  */
 
-class Person(firstName: String, lastName: String)
+class Person(firstName: String, lastName: String) {
+  override def toString = "%s %s".format(firstName, lastName).trim
+}
