@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  */
 
-class Person(firstName: String = "", lastName: String = "") {
+class Person(val firstName: String = "", val lastName: String = "") {
   lazy val name = "%s %s".format(firstName, lastName).trim
   override def toString = name
 }
