@@ -17,8 +17,10 @@ class Bird(name: String) extends DefaultAnimal(name) {
   def fly = "I can fly!"
 }
 
-class Fish(name: String) extends DefaultAnimal(name) {
+trait CanSwim {
   def swim = "I can swim!"
 }
 
-class Duck(name: String) extends Bird(name)
+class Fish(name: String) extends DefaultAnimal(name) with CanSwim
+
+class Duck(name: String) extends Bird(name) with CanSwim
