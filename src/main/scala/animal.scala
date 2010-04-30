@@ -24,3 +24,11 @@ trait CanSwim {
 class Fish(name: String) extends DefaultAnimal(name) with CanSwim
 
 class Duck(name: String) extends Bird(name) with CanSwim
+
+trait MichaelBuble extends Bird {
+  override def fly = "I feel good! And " + super.fly
+}
+
+trait BrokenWings extends Bird {
+  override def fly = "I hope that soon " + super.fly
+}
