@@ -6,6 +6,10 @@
  * http://www.eclipse.org/legal/epl-v10.html
  */
 
+object Person {
+  def apply(firstName: String = "", lastName: String = "") = new Person(firstName, lastName)
+}
+
 class Person(var firstName: String = "", var lastName: String = "") {
   def name = "%s %s".format(firstName, lastName).trim
   override def toString = name
