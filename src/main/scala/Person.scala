@@ -7,5 +7,6 @@
  */
 
 class Person(firstName: String = "", lastName: String = "") {
-  override def toString = "%s %s".format(firstName, lastName).trim
+  lazy val name = "%s %s".format(firstName, lastName).trim
+  override def toString = name
 }
