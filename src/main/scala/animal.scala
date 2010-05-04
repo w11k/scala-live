@@ -32,3 +32,5 @@ trait MichaelBuble extends Bird {
 trait BrokenWings extends Bird {
   override def fly = "I hope that soon " + super.fly
 }
+
+case class Cage[A](animal: A)

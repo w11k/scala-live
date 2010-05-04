@@ -1,9 +1,8 @@
-class Cage[A]
+// 4.1 ----------------------------------------------------------
 
-// ----------------------------------------------------------
+case class Cage[A](animal: A)
 
-class Cage[A <: Animal](val animal: A) extends Cage[A]
-
-// ----------------------------------------------------------
-
-class Cage[+A <: Animal](val animal: A) extends Cage[A]
+/*
+val cage = Cage(new Bird("Bill"))                                 
+val cage = Cage(Person("Heiko"))
+*/
