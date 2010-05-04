@@ -33,4 +33,4 @@ trait BrokenWings extends Bird {
   override def fly = "I hope that soon " + super.fly
 }
 
-case class Cage[A <: Animal](animal: A)
+case class Cage[+A <: Animal](animal: A)
