@@ -6,9 +6,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  */
 
-import org.specs.SpecificationWithJUnit
+import org.specs.Specification
 
-class PersonSpec extends SpecificationWithJUnit {
+class PersonSpec extends Specification {
 
   "Creating a Person" should {
     "throw an IllegalArgumentException given a null firstName" in {
