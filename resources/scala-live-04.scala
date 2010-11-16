@@ -1,32 +1,26 @@
 // 2.1 ----------------------------------------------------------
 
 val numbers = Seq(1, 2, 3, 4)
-val languages = List("Scala", "Java", "Clojure")
+val persons = List(Person("Angela", "Merkel"), Person("Silvio", "Berlusconi"), Person("Barak", "Obama"))
 Seq.apply(1, 2)
 
-numbers.:+(5)
 numbers :+ 5
-numbers.+:(0)
+numbers.:+(5)
 0 +: numbers
-numbers ++ languages
+numbers.+:(0)
+numbers ++ persons
 
-numbers.filter(x => x > 2)
 numbers filter { x => x > 2 }
-numbers filter { _ > 2 }
 
 numbers map { x => x + 1 }
-numbers map { _ + 1 } filter { _ % 2 == 0 }
-languages map { s => s.toLowerCase }
-languages map { s => s.length }
+numbers map { x => x + 1 } filter { x => x % 2 == 0 }
+persons map { p => p.name.toLowerCase }
+persons map { p => p.firstName.size }
 
-languages flatMap { _.toLowerCase }
-languages flatMap { _.toLowerCase } sortWith { (s1, s2) => s1 < s2 }
-languages flatMap { _.toLowerCase } sortWith { _ < _ }
-languages flatMap { _.toLowerCase } sortWith { _ < _ } distinct
+persons sortWith { (p1, p2) => p1.firstName <= p2.firstName }
 
 val plusOne = (x: Int) => x + 1
 numbers map plusOne
 
-def abc(s1: String, s2: String) = s1 < s2
-abc _
-languages sortWith abc
+def abc(p1: Person, p2: Person) = p1.firstName <= p2.firstName
+persons sortWith abc
