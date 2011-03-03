@@ -3,9 +3,7 @@ target
 lib_managed
 src_managed
 boot
-
-# Maven
-target
+project/plugins/project
 
 # Mac
 .DS_Store
@@ -23,3 +21,7 @@ target
 *.iml
 *.ipr
 *.iws
+out
+
+# TextMate
+*.tmproj
